@@ -12,4 +12,7 @@
 ## README 정리 방식                 
 실습 내용 중 중요하다 생각하는 부분 / 새롭게 알게 된 부분에 대한 내용을 기록       
 * 이론과 관련한 부분은 pdf 기반으로 공부. 해당 repository에는 실습 관련 개인 공부용 정리             
-* 해당 이론과 관련한 실습 코드는 커밋 링크
+* 해당 이론과 관련한 실습 코드는 커밋 링크                   
+
+### [welcome page 추가](https://github.com/HunSeongPark/spring-mvc-1/commit/5fad6399a7c54812d8fc49fc41e4108cafdead28)                   
+- `/resources/static/index.html` 경로에 해당하는 index.html의 경우 기본 페이지로 지정된다.            
