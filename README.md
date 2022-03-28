@@ -51,7 +51,7 @@
   - ex) `<tr th:each="item : ${items}"`
   - 위와 같이 테이블에 items 컬렉션 내 item의 값을 반복 출력을 통해 보여줄 수 있다.
 
-### @RequiredArgsConstructor
+### [@RequiredArgsConstructor](https://github.com/HunSeongPark/spring-mvc-1/commit/0309074295abc3f70e6f7352f6348af1129c2488)
 - Lombok에서 제공하는 어노테이션
 - final 키워드가 붙은 멤버변수에 대한 Constructor 자동 생성
 - Constructor가 하나만 있으면 Spring이 해당 생성자에 대해 @Autowired 어노테이션을 달아 의존관계 주입
