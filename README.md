@@ -16,5 +16,5 @@
           
 ------------------                   
 
-### [welcome page 추가](https://github.com/HunSeongPark/spring-mvc-1/commit/5fad6399a7c54812d8fc49fc41e4108cafdead28)                   
-- `/resources/static/index.html` 경로에 해당하는 index.html의 경우 기본 페이지로 지정된다.            
+### welcome page 추가                
+- `/resources/static/index.html` 경로에 해당하는 index.html의 경우 기본 페이지로 지정된다. [#Commit](https://github.com/HunSeongPark/spring-mvc-1/commit/5fad6399a7c54812d8fc49fc41e4108cafdead28)          
