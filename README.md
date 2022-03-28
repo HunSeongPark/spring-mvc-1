@@ -17,7 +17,39 @@
 ------------------                   
 
 ### [welcome page 추가](https://github.com/HunSeongPark/spring-mvc-1/commit/5fad6399a7c54812d8fc49fc41e4108cafdead28)                
-- `/resources/static/index.html` 경로에 해당하는 index.html의 경우 기본 페이지로 지정된다.              
+- `/resources/static/index.html` 경로에 해당하는 index.html의 경우 기본 페이지로 지정된다.        
+
+### [ThymeLeaf](https://github.com/HunSeongPark/spring-mvc-1/commit/0309074295abc3f70e6f7352f6348af1129c2488)
+- 사용 선언
+  - `<html xmlns:th="http://www.thymeleaf.org">`
+- HTML 속성 변경
+  - ex) href 변경
+  - `th:href="@{/css/bootstrap.min.css}"`
+  - 기본 순수 HTML 속성인 `href=A`를 `th:href=B`로 변경
+  - HTML을 그대로 거칠 때는 기본 href 속성 사용, Thymeleaf 템플릿을 거칠 때는 th:href 값으로 대체되며 동적인 변경 가능
+  - 그래서 Thymeleaf는 순수 HTML을 웹 브라우저에서 열어도 확인 가능하며, 서버를 통해 Thymeleaf 템플릿을 거쳐 동적으로도 확인 할 수 있는 *Natural Templates*라고 한다.
+- URL 링크 표현식
+  - `@{link}`와 같은 문법을 가짐
+  - ex) `th:href="@{/css/bootstrap.min.css}"`
+  - Path Variable과 같은 형태로도 표현식을 쓸 수 있다.
+  - ex) `th:href="@{/basic/items/{itemId}(itemId=${item.id})}"`
+  - 쿼리 파라미터도 생성 할 수 있다.
+  - ex) `th:href="@{/basic/items/{itemId}(itemId=${item.id}, query='test')}"`
+    - 결과 : `basic/items/1?query=test`
+- 리터럴 대체 
+  - `|...|`와 같은 문법을 가짐
+  - 문자와 표현식을 + 연산을 통해 사용할 필요없이 한번에 사용 가능
+  - ex) `th:onclick="|location.href='@{/basic/items/add}'|"`
+  - 위와 같이 문자 `location.href=`와 표현식 `@{/basic/items/add}`를 리터럴 대체를 통해 한번에 사용할 수 있다.
+- 변수 표현식
+  - `${item.price}`와 같은 문법을 가짐
+  - model에 포함된 값 또는 Thymeleaf 변수로 선언한 값을 조회 할 수 있다.
+  - 프로퍼티 접근법을 통해 `item.price`와 같이 사용할 수 있다.
+- 반복 출력
+  - `th:each="item : ${items}"`와 같은 문법을 가짐
+  - items 컬렉션에 포함된 데이터 item을 반복문을 돌며 사용
+  - ex) `<tr th:each="item : ${items}"`
+  - 위와 같이 테이블에 items 컬렉션 내 item의 값을 반복 출력을 통해 보여줄 수 있다.
 
 ### @RequiredArgsConstructor
 - Lombok에서 제공하는 어노테이션
