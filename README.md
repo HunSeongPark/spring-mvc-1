@@ -16,5 +16,22 @@
           
 ------------------                   
 
-### welcome page 추가                
-- `/resources/static/index.html` 경로에 해당하는 index.html의 경우 기본 페이지로 지정된다. [#Commit](https://github.com/HunSeongPark/spring-mvc-1/commit/5fad6399a7c54812d8fc49fc41e4108cafdead28)          
+### [welcome page 추가](https://github.com/HunSeongPark/spring-mvc-1/commit/5fad6399a7c54812d8fc49fc41e4108cafdead28)                
+- `/resources/static/index.html` 경로에 해당하는 index.html의 경우 기본 페이지로 지정된다.              
+
+### @RequiredArgsConstructor
+- Lombok에서 제공하는 어노테이션
+- final 키워드가 붙은 멤버변수에 대한 Constructor 자동 생성
+- Constructor가 하나만 있으면 Spring이 해당 생성자에 대해 @Autowired 어노테이션을 달아 의존관계 주입
+```java
+@RequiredArgsConstructor
+public class BasicItemController {
+
+    private final ItemRepository itemRepository;
+    
+    // *** @RequiredArgsConstructor에 의해 모두 생략됨 ***
+    // @Autowired
+    // public BasicItemController(ItemRepository itemRepository) {
+    // this.itemRepository = itemRepository;
+    // }
+```
