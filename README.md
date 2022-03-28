@@ -66,4 +66,25 @@ public class BasicItemController {
     // public BasicItemController(ItemRepository itemRepository) {
     // this.itemRepository = itemRepository;
     // }
+```                 
+
+### [@ModelAttribute](https://github.com/HunSeongPark/spring-mvc-1/commit/b287fcff9c77a99c5b3db68d2a772496865b6994)
+- Request Parameter를 객체에 담을 수 있는 방법
+- 프로퍼티 접근법을 통해 Request Parameter의 값들을 객체의 프로퍼티에 자동으로 세팅한다.
+```java
+public String addItemV2(@ModelAttribute Item item) {
+  ...
+}
+```
+- @ModelAttribute 어노테이션은 model에 해당 객체를 자동으로 넣어주는 기능을 수행한다.
+- 이 때 이름은 `@ModelAttribute("name")`과 같이 지정하여 꺼낼 수 있으며, 생략 시 해당 객체의 변수명으로 지정된다.(`@ModelAttribute Item item`일 경우 "item")
+- 심지어는 @ModelAttribute도 생략 가능하다. wow
+```java
+@PostMapping("/add")
+    public String addItemV3(Item item) {
+        itemRepository.save(item);
+//        model.addAttribute("item", item); // 생략 가능
+
+        return "basic/item";
+    }
 ```
